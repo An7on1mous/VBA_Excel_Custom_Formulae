@@ -27,23 +27,23 @@ Step 2: Add a new module if there is not one already.
 
 Step 3: Enter or copy and paste the following code, we are going to add the 2 functions in one step:
 
-Public Function CWGM(RetailSales As Long, RetailSalesAtCost As Long) As Double
-  '	Calculates gross margin
-  On Error Resume Next
-    CWGM = RetailSales - RetailSalesAtCost
-  On Error GoTo 0
-End Function
-
-Public Function CWGMPercentage(GMDollars As Long, Sales As Long) As Double
-  '	Calculates gross margin percentage 
-  On Error Resume Next
-    If GMDollars = 0 Or Sales = 0 Then
-      CWGMPercentage = 0
-    Else
-      CWGMPercentage = GMDollars / Sales
-    End If
-  On Error GoTo 0
-End Function
+    Public Function CWGM(RetailSales As Long, RetailSalesAtCost As Long) As Double
+      '	Calculates gross margin
+      On Error Resume Next
+        CWGM = RetailSales - RetailSalesAtCost
+      On Error GoTo 0
+    End Function
+    
+    Public Function CWGMPercentage(GMDollars As Long, Sales As Long) As Double
+      '	Calculates gross margin percentage 
+      On Error Resume Next
+        If GMDollars = 0 Or Sales = 0 Then
+          CWGMPercentage = 0
+        Else
+          CWGMPercentage = GMDollars / Sales
+        End If
+      On Error GoTo 0
+    End Function
 
 Step 4: Close Visual Basic
 
@@ -73,11 +73,11 @@ After the name CWGM, in brackets, we declare the 2 parameters to be used in the 
 
 The VBA code:
 
-Public Function CWGM(RetailSales As Long, RetailSalesAtCost As Long) As Double
-  On Error Resume Next
-    CWGM = RetailSales - RetailSalesAtCost
-  On Error GoTo 0
-End Function
+    Public Function CWGM(RetailSales As Long, RetailSalesAtCost As Long) As Double
+      On Error Resume Next
+        CWGM = RetailSales - RetailSalesAtCost
+      On Error GoTo 0
+    End Function
 
 We tell VBA that On Error, resume next, which means to ignore any errors and keep going without crashing. 
 After this check, the real formula performs the calculation, which is retail sales MINUS sales at cost
@@ -86,16 +86,16 @@ After this check, the real formula performs the calculation, which is retail sal
 In the case of CWGMPercentage
 =CWGMPercentage(C2,A2)
 
-Public Function CWGMPercentage(GMDollars As Long, Sales As Long) As Double
-  '	Calculates gross margin percentage 
-  On Error Resume Next
-    If GMDollars = 0 Or Sales = 0 Then
-      CWGMPercentage = 0
-    Else
-      CWGMPercentage = GMDollars / Sales
-    End If
-  On Error GoTo 0
-End Function
+    Public Function CWGMPercentage(GMDollars As Long, Sales As Long) As Double
+      '	Calculates gross margin percentage 
+      On Error Resume Next
+        If GMDollars = 0 Or Sales = 0 Then
+          CWGMPercentage = 0
+        Else
+          CWGMPercentage = GMDollars / Sales
+        End If
+      On Error GoTo 0
+    End Function
 
 We follow the same error handling procedure as before, but this time, we add an IF, THEN, ELSE statement to check if the divisor is zero, which would also return another error.
 
